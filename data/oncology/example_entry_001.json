@@ -1,0 +1,21 @@
+{
+  "experiment_id": "ONC_2025_0001",
+  "domain": "Oncology",
+  "target_disease": "Non-Small Cell Lung Cancer (NSCLC)",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "Example_Compound_A",
+    "dosage": "N/A - see source"
+  },
+  "hypothesis": "Example_Compound_A improves progression-free survival versus standard of care.",
+  "outcome": "Trial terminated early; primary endpoint (progression-free survival) not met.",
+  "methodology_summary": "Randomized controlled trial, phase II. See registry entry for full protocol.",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "University Research Lab",
+  "date_concluded": "2024-06-01",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": ["negative result", "oncology", "phase II", "terminated trial"]
+}

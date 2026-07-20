@@ -1,0 +1,28 @@
+name: Validate Submissions
+
+on:
+  pull_request:
+    paths:
+      - "data/**/*.json"
+  push:
+    branches: [main]
+    paths:
+      - "data/**/*.json"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate all data entries
+        run: python scripts/validate_submission.py data/
