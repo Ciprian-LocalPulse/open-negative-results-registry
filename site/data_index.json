@@ -1,0 +1,79 @@
+[
+  {
+    "experiment_id": "CARD_2025_0001",
+    "domain": "Cardiology",
+    "target_disease": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+    "intervention_name": "Example_Compound_D (illustrative)",
+    "outcome": "Trial stopped early for futility at interim analysis; no meaningful reduction in hospitalization events observed.",
+    "date_concluded": "2024-11-30",
+    "institution_type": "Hospital / Clinical Center",
+    "source_url": "https://clinicaltrials.gov/",
+    "file": "data/cardiology/example_entry_001.json"
+  },
+  {
+    "experiment_id": "IMM_2025_0001",
+    "domain": "Immunology",
+    "target_disease": "Rheumatoid Arthritis",
+    "intervention_name": "Example_Biologic_F (illustrative)",
+    "outcome": "ACR50 response rate not significantly different from placebo at week 24.",
+    "date_concluded": "2024-08-05",
+    "institution_type": "Pharmaceutical Company",
+    "source_url": "https://clinicaltrials.gov/",
+    "file": "data/immunology/example_entry_001.json"
+  },
+  {
+    "experiment_id": "ID_2025_0001",
+    "domain": "Infectious Disease",
+    "target_disease": "Multidrug-Resistant Tuberculosis",
+    "intervention_name": "Example_Compound_G (illustrative)",
+    "outcome": "No significant improvement in culture conversion rate versus standard regimen alone; trial did not proceed to phase III.",
+    "date_concluded": "2024-05-22",
+    "institution_type": "Government Institute",
+    "source_url": "https://clinicaltrials.gov/",
+    "file": "data/infectious_disease/example_entry_001.json"
+  },
+  {
+    "experiment_id": "NEU_2025_0001",
+    "domain": "Neurology",
+    "target_disease": "Early-stage Alzheimer's Disease",
+    "intervention_name": "Example_Compound_B (illustrative)",
+    "outcome": "No statistically significant difference in cognitive decline scores between treatment and placebo arms at 18-month follow-up.",
+    "date_concluded": "2024-09-12",
+    "institution_type": "University Research Lab",
+    "source_url": "https://clinicaltrials.gov/",
+    "file": "data/neurology/example_entry_001.json"
+  },
+  {
+    "experiment_id": "ONC_2025_0001",
+    "domain": "Oncology",
+    "target_disease": "Non-Small Cell Lung Cancer (NSCLC)",
+    "intervention_name": "Example_Compound_A",
+    "outcome": "Trial terminated early; primary endpoint (progression-free survival) not met.",
+    "date_concluded": "2024-06-01",
+    "institution_type": "University Research Lab",
+    "source_url": "https://clinicaltrials.gov/",
+    "file": "data/oncology/example_entry_001.json"
+  },
+  {
+    "experiment_id": "PHARM_2025_0001",
+    "domain": "Pharmacology",
+    "target_disease": "Type 2 Diabetes Mellitus",
+    "intervention_name": "Example_Compound_C (illustrative)",
+    "outcome": "No significant improvement in HOMA-IR index compared to vehicle control after 6 weeks of dosing.",
+    "date_concluded": "2025-02-20",
+    "institution_type": "Pharmaceutical Company",
+    "source_url": "",
+    "file": "data/pharmacology/example_entry_001.json"
+  },
+  {
+    "experiment_id": "PSYCH_2025_0001",
+    "domain": "Psychiatry",
+    "target_disease": "Treatment-Resistant Major Depressive Disorder",
+    "intervention_name": "Example_Digital_Intervention_E (illustrative)",
+    "outcome": "No significant between-group difference in MADRS score change at 8 weeks.",
+    "date_concluded": "2025-01-18",
+    "institution_type": "University Research Lab",
+    "source_url": "",
+    "file": "data/psychiatry/example_entry_001.json"
+  }
+]

@@ -57,7 +57,10 @@ def validate_file(path: Path, schema: dict) -> bool:
 
 def gather_targets(input_path: Path):
     if input_path.is_dir():
-        return sorted(input_path.glob("*.json"))
+        return sorted(
+            p for p in input_path.rglob("*.json")
+            if "templates" not in p.parts
+        )
     return [input_path]
 
 
