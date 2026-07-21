@@ -11,7 +11,10 @@ Prepared in connection with the Dark Data Medicine open registry project
 *github.com --- Dark Data Medicine: The Open Negative Results Registry*
 
 Author: Ciprian Ștefan Pleșca
-Affiliation: Founder @LocalPulse; Lead Enterprise AI Architect
+
+Affiliation: Founder @LocalPulse;
+Lead Enterprise AI Architect
+
 Contact: contact@agentflow-enterprise.com
 Date: July 2026
 
