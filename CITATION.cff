@@ -5,9 +5,9 @@ type: dataset
 authors:
   - family-names: "Plesca"
     given-names: "Ciprian Stefan"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-repository-code: "https://github.com/REPLACE_WITH_ORG/DarkData-Medicine"
-url: "https://REPLACE_WITH_ORG.github.io/DarkData-Medicine/"
+    orcid: "https://orcid.org/0009-0006-1340-0232"
+repository-code: "https://github.com/Ciprian-LocalPulse/open-negative-results-registry"
+url: "https://github.com/Ciprian-LocalPulse/open-negative-results-registry/"
 license: "MIT"
 keywords:
   - negative results
