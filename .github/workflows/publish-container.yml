@@ -1,0 +1,70 @@
+name: Build and Publish Container
+
+# Publishes the CLI toolkit as a Docker image to the GitHub Container
+# Registry (ghcr.io) so it shows up under this repo's "Packages" tab.
+#
+# Triggers:
+#   - On every push to main that touches the toolkit (keeps a rolling
+#     `:latest` / `:main` tag up to date with the dataset and scripts)
+#   - On every tagged release (e.g. v1.1.0) — publishes an immutable,
+#     versioned tag alongside `:latest`
+#
+# No secrets need to be configured manually: GITHUB_TOKEN is provided
+# automatically by GitHub Actions and has package:write permission
+# once the "packages: write" permission below is granted.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - "docker-entrypoint.sh"
+      - "scripts/**"
+      - "data/**"
+      - "requirements.txt"
+      - ".github/workflows/publish-container.yml"
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Derive image tags and labels
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/darkdata-medicine
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=sha,prefix=sha-,format=short
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
