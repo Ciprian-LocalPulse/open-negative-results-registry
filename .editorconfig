@@ -1,0 +1,34 @@
+# EditorConfig: https://editorconfig.org
+# Keeps formatting consistent across contributors' editors regardless
+# of OS or IDE -- relevant here because contributors range from
+# no-code form submitters (who never touch this) to full developers
+# editing scripts/ and tests/.
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.py]
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[data/**/*.json]
+# Submission data files: match the format produced by
+# scripts/validate_submission.py and json.dump(..., indent=2)
+indent_size = 2
+insert_final_newline = true
+
+[Makefile]
+indent_style = tab

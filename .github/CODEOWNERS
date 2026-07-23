@@ -1,0 +1,28 @@
+# CODEOWNERS
+#
+# Routes review requests automatically. See docs/GOVERNANCE.md for the
+# full decision-making process this file supports -- this is the
+# GitHub-native mechanism for the "named curator" review step
+# described in docs/CURATION_GUIDE.md.
+#
+# As the project moves from single-maintainer to a multi-curator model
+# (docs/GOVERNANCE.md, "Path to broader governance"), domain-specific
+# owners should be added below, e.g.:
+#   /data/oncology/       @oncology-curator-handle
+#   /data/neurology/       @neurology-curator-handle
+
+# Default owner for everything not matched below
+*                          @Ciprian-LocalPulse
+
+# Schema changes require the rationale + migration plan described in
+# docs/GOVERNANCE.md regardless of who opens the PR
+/data/templates/           @Ciprian-LocalPulse
+
+# Governance and licensing documents
+/docs/GOVERNANCE.md        @Ciprian-LocalPulse
+/LICENSE                   @Ciprian-LocalPulse
+/MANIFEST.md                @Ciprian-LocalPulse
+
+# CI/CD and container publishing
+/.github/workflows/        @Ciprian-LocalPulse
+/Dockerfile                 @Ciprian-LocalPulse

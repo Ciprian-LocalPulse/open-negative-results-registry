@@ -1,0 +1,21 @@
+{
+  "experiment_id": "PSYCH_2025_0001",
+  "domain": "Psychiatry",
+  "target_disease": "Treatment-Resistant Major Depressive Disorder",
+  "tested_intervention": {
+    "type": "Behavioral",
+    "name": "Example_Digital_Intervention_E (illustrative)",
+    "dosage": "N/A - 8-week app-based program"
+  },
+  "hypothesis": "Example_Digital_Intervention_E reduces MADRS depression scores versus waitlist control.",
+  "outcome": "No significant between-group difference in MADRS score change at 8 weeks.",
+  "methodology_summary": "Randomized controlled trial, waitlist control, self-report and clinician-rated outcomes.",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "University Research Lab",
+  "date_concluded": "2025-01-18",
+  "source_type": "literature_mining",
+  "source_url": "",
+  "license": "CC-BY-4.0",
+  "contact_email_optional": "",
+  "keywords": ["negative result", "psychiatry", "digital therapeutics", "illustrative example"]
+}

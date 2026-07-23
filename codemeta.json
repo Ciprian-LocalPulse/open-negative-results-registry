@@ -1,0 +1,60 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Dark Data Medicine: The Open Negative Results Registry",
+  "description": "An open, structured, and freely accessible registry of negative and null results in medical and biomedical research. Reduces duplicated research effort caused by publication bias by giving negative findings -- including preclinical and early-phase results that fall outside formal clinical trial registries -- a permanent, citable, machine-readable home.",
+  "identifier": "https://github.com/Ciprian-LocalPulse/open-negative-results-registry",
+  "codeRepository": "https://github.com/Ciprian-LocalPulse/open-negative-results-registry",
+  "url": "https://ciprian-localpulse.github.io/open-negative-results-registry/",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "1.0.0",
+  "dateCreated": "2026-01-01",
+  "programmingLanguage": [
+    { "@type": "ComputerLanguage", "name": "Python", "version": "3.12" },
+    { "@type": "ComputerLanguage", "name": "HTML" },
+    { "@type": "ComputerLanguage", "name": "Shell" },
+    { "@type": "ComputerLanguage", "name": "Dockerfile" }
+  ],
+  "runtimePlatform": ["Python 3.10+"],
+  "operatingSystem": ["Linux", "macOS", "Windows"],
+  "applicationCategory": "Research infrastructure / Open science / Biomedical data",
+  "keywords": [
+    "negative results",
+    "publication bias",
+    "open science",
+    "dark data",
+    "clinical trials",
+    "biomedical research",
+    "reproducibility",
+    "meta-analysis",
+    "FAIR data",
+    "JSON Schema"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Ciprian Stefan",
+      "familyName": "Plesca",
+      "@id": "https://orcid.org/0000-0000-0000-0000"
+    }
+  ],
+  "maintainer": {
+    "@type": "Person",
+    "givenName": "Ciprian Stefan",
+    "familyName": "Plesca"
+  },
+  "softwareRequirements": [
+    { "@type": "SoftwareApplication", "identifier": "jsonschema", "name": "jsonschema (>=4.20.0)" },
+    { "@type": "SoftwareApplication", "identifier": "openpyxl", "name": "openpyxl (>=3.1.2)" },
+    { "@type": "SoftwareApplication", "identifier": "requests", "name": "requests (>=2.31.0)" },
+    { "@type": "SoftwareApplication", "identifier": "pytest", "name": "pytest (>=8.0.0)" }
+  ],
+  "readme": "https://github.com/Ciprian-LocalPulse/open-negative-results-registry/blob/main/README.md",
+  "issueTracker": "https://github.com/Ciprian-LocalPulse/open-negative-results-registry/issues",
+  "releaseNotes": "https://github.com/Ciprian-LocalPulse/open-negative-results-registry/blob/main/CHANGELOG.md",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": "Dark Data Medicine white paper and architecture documentation",
+    "url": "https://github.com/Ciprian-LocalPulse/open-negative-results-registry/blob/main/DarkData-Medicine_WhitePaper.md"
+  }
+}

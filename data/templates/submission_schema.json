@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Negative Result Submission",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "domain",
+    "target_disease",
+    "tested_intervention",
+    "hypothesis",
+    "outcome",
+    "methodology_summary",
+    "institution_type",
+    "date_concluded",
+    "license"
+  ],
+  "properties": {
+    "experiment_id": { "type": "string", "minLength": 3 },
+    "domain": {
+      "type": "string",
+      "enum": ["Oncology", "Neurology", "Pharmacology", "Cardiology", "Psychiatry", "Immunology", "Infectious Disease", "Endocrinology", "Other"]
+    },
+    "target_disease": { "type": "string", "minLength": 3 },
+    "tested_intervention": {
+      "type": "object",
+      "required": ["type", "name"],
+      "properties": {
+        "type": { "type": "string", "enum": ["Molecule", "Drug", "Biologic", "Device", "Behavioral", "Procedure", "Other"] },
+        "name": { "type": "string", "minLength": 1 },
+        "dosage": { "type": "string" }
+      }
+    },
+    "hypothesis": { "type": "string", "minLength": 5 },
+    "outcome": { "type": "string", "minLength": 5 },
+    "methodology_summary": { "type": "string", "minLength": 5 },
+    "researcher_orcid": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]$"
+    },
+    "institution_type": {
+      "type": "string",
+      "enum": ["University Research Lab", "Hospital / Clinical Center", "Pharmaceutical Company", "Independent Researcher", "Government Institute", "Other"]
+    },
+    "date_concluded": { "type": "string", "format": "date" },
+    "source_type": { "type": "string", "enum": ["original_submission", "public_database_extraction", "literature_mining"] },
+    "source_url": { "type": "string" },
+    "license": { "type": "string", "enum": ["CC0-1.0", "CC-BY-4.0"] },
+    "contact_email_optional": { "type": "string" },
+    "keywords": { "type": "array", "items": { "type": "string" } }
+  }
+}

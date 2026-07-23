@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this dataset or tooling, please cite it as below."
+title: "Dark Data Medicine: The Open Negative Results Registry"
+type: dataset
+authors:
+  - family-names: "Plesca"
+    given-names: "Ciprian Stefan"
+    orcid: "https://orcid.org/0009-0006-1340-0232"
+repository-code: "https://github.com/Ciprian-LocalPulse/open-negative-results-registry"
+url: "https://github.com/Ciprian-LocalPulse/open-negative-results-registry/"
+license: "MIT"
+keywords:
+  - negative results
+  - publication bias
+  - open science
+  - medicine
+  - clinical trials
+  - dark data
+version: "0.1.0"
+date-released: "2026-01-01"
+abstract: >
+  An open, structured, and freely accessible registry of negative and null
+  results in medical and biomedical research, intended to reduce duplicated
+  effort caused by publication bias. Entries follow a standardized JSON
+  schema and are validated automatically. Individual data entries carry
+  their own license (see the DATA LICENSING section of README.md).
