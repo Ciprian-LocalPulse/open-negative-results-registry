@@ -1,0 +1,40 @@
+name: Auto-Validate Scientific Metadata
+
+on:
+issues:
+types: [opened, edited]
+
+jobs:
+validate-orcid:
+runs-on: ubuntu-latest
+if: contains(github.event.issue.labels.*.name, 'negative-result')
+
+steps:
+  - name: Check ORCID Format in Issue Body
+    uses: actions/github-script@v6
+    with:
+      script: |
+        const body = context.payload.issue.body;
+        // Regex pentru formatul standard ORCID: 0000-0000-0000-0000 (poate se termina în X)
+        const orcidRegex = /\b\d{4}-\d{4}-\d{4}-\d{3}[0-9X]\b/i;
+        
+        if (!orcidRegex.test(body)) {
+          // Dacă nu se găsește un ORCID valid, lasă un comentariu
+          await github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: "⚠️ **Validare Automată Eșuată**: Nu am putut detecta un ORCID ID valid în submisia ta. Te rugăm să editezi formularul și să folosești formatul corect (ex: `0000-0002-1825-0097`)."
+          });
+          
+          await github.rest.issues.addLabels({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['metadata-error']
+          });
+          
+          core.setFailed('Invalid ORCID Format');
+        } else {
+          console.log('ORCID valid detectat.');
+        }

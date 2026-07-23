@@ -1,0 +1,78 @@
+name: 🔬 Submit Negative Result / Experimental Failure
+description: Report an experiment, study or protocol that did not confirm the initial hypothesis.
+title: "[NEG-RESULT]: <Short description of the experiment>"
+labels: ["negative-result", "needs-review"]
+body:
+type: markdown
+attributes:
+value: |
+## Thank you for contributing to Open Science!
+This form collects essential data to index your negative result according to FAIR standards.
+
+type: input
+id: orcid
+attributes:
+label: ORCID ID (Principal Author)
+description: Standard format, e.g. 0000-0002-1825-0097
+placeholder: 0000-0000-0000-0000
+validations:
+required: true
+
+type: input
+id: ror
+attributes:
+label: ROR ID (Affiliated Institution)
+description: Find the Institution ID on ror.org
+placeholder: https://ror.org/03yrm5c26
+validations:
+required: true
+
+type: input
+id: mesh_terms
+attributes:
+label: Domain / Medical Subject Headings (MeSH)
+description: Keywords describing the domain of the experiment (separated by commas).
+placeholder: "e.g. Machine Learning, Oncology, PCR"
+validations:
+required: true
+
+type: textarea
+id: hypothesis
+attributes:
+label: The Hypothesis
+description: What did you try to prove? What was the theoretical basis?
+placeholder: "We hypothesized that applying algorithm X to dataset Y would increase detection accuracy by 15%..."
+validations:
+required: true
+
+type: textarea
+id: methodology
+attributes:
+label: Methodology and Protocol
+description: Describe the experimental steps. Include links to code, protocols (protocols.io), or external data repositories.
+validations:
+required: true
+
+type: textarea
+id: failure_reason
+attributes:
+label: The Result and Analysis of the Failure (The Negative Result)
+description: Why do you think the hypothesis failed? Was it a data limitation, a theoretical error, or an unexpected phenomenon?
+validations:
+required: true
+
+type: input
+id: data_doi
+attributes:
+label: Dataset DOI (Optional but recommended)
+description: Link to raw data on Zenodo, Figshare, etc.
+validations:
+required: false
+
+type: checkboxes
+id: terms
+attributes:
+label: License Agreement
+options:
+- label: I confirm that this report and associated data can be published under the CC-BY 4.0 or CC0 license.
+required: true
