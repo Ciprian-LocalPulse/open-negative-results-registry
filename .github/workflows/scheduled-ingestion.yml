@@ -1,0 +1,89 @@
+name: Scheduled ClinicalTrials.gov Ingestion
+
+# Runs the domain-sweep ingestion pipeline weekly and opens a Pull
+# Request with the resulting drafts for curator review. Per
+# docs/CURATION_GUIDE.md ("Batch imports are treated as drafts, never
+# as verified data"), this workflow NEVER pushes directly to main and
+# NEVER auto-merges -- it only proposes. A human curator still reviews
+# every individual entry through the normal PR process before anything
+# reaches data/.
+#
+# Runs Sunday 03:00 UTC (off-peak, respects ClinicalTrials.gov's own
+# guidance to avoid high-traffic windows for automated/bulk queries).
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+    inputs:
+      limit_per_domain:
+        description: "Max studies to fetch per domain"
+        required: false
+        default: "50"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run domain-sweep ingestion
+        run: |
+          python scripts/clinicaltrials_ingest.py \
+            --domain-sweep \
+            --limit "${{ github.event.inputs.limit_per_domain || '50' }}" \
+            --out drafts/clinicaltrials_gov/
+
+      - name: Check whether any new drafts were produced
+        id: check_drafts
+        run: |
+          if [ -z "$(find drafts/clinicaltrials_gov -name '*_draft.json' 2>/dev/null)" ]; then
+            echo "has_drafts=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_drafts=true" >> "$GITHUB_OUTPUT"
+            echo "draft_count=$(find drafts/clinicaltrials_gov -name '*_draft.json' | wc -l)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open Pull Request with new drafts
+        if: steps.check_drafts.outputs.has_drafts == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Weekly ClinicalTrials.gov draft ingestion"
+          branch: auto/clinicaltrials-ingestion-${{ github.run_number }}
+          title: "Weekly draft candidates from ClinicalTrials.gov (${{ steps.check_drafts.outputs.draft_count }} entries)"
+          body: |
+            Automated draft candidates from this week's ClinicalTrials.gov
+            domain sweep, produced by `.github/workflows/scheduled-ingestion.yml`
+            via `scripts/clinicaltrials_ingest.py`.
+
+            **These are drafts only.** Per `docs/CURATION_GUIDE.md`, every
+            file here needs individual curator review before merging into
+            `data/`: confirm domain classification, write a real hypothesis
+            and outcome summary, and -- for any entry tagged `confidence_low`
+            -- check the ClinicalTrials.gov results section manually before
+            treating it as a negative result.
+
+            Entries are pre-tagged in their `keywords` field to help triage:
+            - `confidence_high` / `confidence_medium` / `confidence_low`
+            - `domain_unconfirmed` if auto-classification wasn't confident
+            - `institution_unconfirmed` if sponsor type wasn't confident
+
+            This PR does not modify anything under `data/` directly and
+            will not auto-merge.
+          labels: |
+            automated-ingestion
+            needs-curator-review
