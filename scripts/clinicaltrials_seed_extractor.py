@@ -2,6 +2,13 @@
 """
 clinicaltrials_seed_extractor.py
 
+DEPRECATED: superseded by clinicaltrials_ingest.py, which keeps the same
+output schema and drafts/ -> human-review contract but adds domain
+classification, confidence scoring, and a --domain-sweep mode wired into
+the scheduled ingestion workflow. Kept only for reference / manual one-off
+pulls; prefer clinicaltrials_ingest.py for anything new. See the module
+docstring on clinicaltrials_ingest.py for the full comparison.
+
 Helper script to seed the repository with candidate negative-result entries
 pulled from the public ClinicalTrials.gov API (no key required).
 
@@ -19,6 +26,7 @@ Requires:
 import argparse
 import json
 import time
+import warnings
 from pathlib import Path
 
 try:
@@ -105,6 +113,15 @@ def main():
     parser.add_argument("--limit", type=int, default=50, help="Max number of studies to fetch")
     parser.add_argument("--out", default="drafts", help="Output folder for draft JSON files")
     args = parser.parse_args()
+
+    warnings.warn(
+        "clinicaltrials_seed_extractor.py is deprecated; use "
+        "clinicaltrials_ingest.py instead (same schema, adds domain "
+        "classification and confidence scoring).",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    print("NOTE: this script is deprecated -- prefer clinicaltrials_ingest.py.\n")
 
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)

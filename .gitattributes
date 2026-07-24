@@ -1,0 +1,10 @@
+# Normalize all text files to LF in the repository, regardless of what
+# line ending the contributor's editor/OS used on checkout. This stops
+# the whole-repo "everything modified" diff noise caused by mixed
+# CRLF/LF history (Windows editors vs macOS/Linux contributors).
+* text=auto eol=lf
+
+# Never normalize binary assets
+*.png binary
+*.pdf binary
+*.xlsx binary

@@ -1,0 +1,22 @@
+name: Test Suite
+
+# Runs the full pytest suite (schema, trend analysis, ingestion, and
+# negative-language classifier tests) on every PR and push to main.
+# test-ingestion.yml deliberately mirrors this file's structure for
+# the Level-1 ingestion tooling specifically -- see the comment there.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: pytest tests/ -v

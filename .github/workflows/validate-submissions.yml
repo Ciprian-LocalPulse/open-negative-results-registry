@@ -1,0 +1,25 @@
+name: Validate Submissions
+
+# Schema-validates every JSON file under data/ on any PR that touches
+# the dataset, so malformed entries are caught before a human curator
+# ever looks at them (see docs/CURATION_GUIDE.md, step 1).
+
+on:
+  pull_request:
+    paths:
+      - "data/**/*.json"
+  push:
+    branches: [main]
+    paths:
+      - "data/**/*.json"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install jsonschema
+      - run: python scripts/validate_submission.py data/
