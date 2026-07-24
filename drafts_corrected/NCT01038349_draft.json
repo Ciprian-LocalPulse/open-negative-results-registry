@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT01038349",
+  "domain": "Immunology",
+  "target_disease": "Rheumatoid Arthritis",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Avise PG - Diagnostic test",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: COMPLETED. Status: COMPLETED. Completed trials require manual results-section review before assuming a negative outcome -- see docs/CURATION_GUIDE.md. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "OBSERVATIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2010-02",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT01038349",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT01300299",
+  "domain": "Oncology",
+  "target_disease": "Non-small Cell Lung Cancer (NSCLC)",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Stereotactic Body Radiation Therapy",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: WITHDRAWN. Status: WITHDRAWN. Reason given: 'Unable to enroll'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2015-02",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT01300299",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}

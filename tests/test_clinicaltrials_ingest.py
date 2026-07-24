@@ -119,6 +119,62 @@ def test_unmatched_condition_falls_back_to_other_not_invalid_string():
     assert confident is False          # but correctly flagged as unconfirmed
 
 
+def test_domain_classification_handles_mesh_inverted_phrasing():
+    # Regression test: real --domain-sweep run against ClinicalTrials.gov
+    # dumped condition strings like "Arthritis, Rheumatoid" into "Other"
+    # even though "Rheumatoid Arthritis" (natural order) correctly matched
+    # Immunology. ClinicalTrials.gov/MeSH indexing frequently inverts
+    # multi-word condition names around a comma, so a plain substring
+    # check on the natural-order phrase silently misses a large share of
+    # real, classifiable data.
+    domain, confident = classify_domain(["Arthritis, Rheumatoid"])
+    assert domain == "Immunology"
+    assert confident is True
+
+    domain, confident = classify_domain(["Arthritis, Rheumatoid", "Ultrasonography"])
+    assert domain == "Immunology"
+    assert confident is True
+
+    # A single shared word must NOT be enough to trigger a false match --
+    # "Juvenile Idiopathic Arthritis" contains "arthritis" but not
+    # "rheumatoid", so it must correctly fall through to Other.
+    domain, confident = classify_domain(["Juvenile Idiopathic Arthritis"])
+    assert domain == "Other"
+    assert confident is False
+
+
 def test_every_known_status_has_a_defined_confidence_tier():
     for status in ("TERMINATED", "WITHDRAWN", "SUSPENDED", "COMPLETED"):
         assert status in STATUS_CONFIDENCE
+
+
+def test_to_draft_entry_handles_study_with_no_interventions():
+    # Regression test: real --domain-sweep run against ClinicalTrials.gov
+    # crashed with IndexError on interventions[0] when a study (e.g. an
+    # observational study with an empty armsInterventionsModule) lists no
+    # interventions at all. intervention_name already guarded against this;
+    # intervention_type did not.
+    study = {
+        "protocolSection": {
+            "identificationModule": {"nctId": "NCT00000000"},
+            "statusModule": {"overallStatus": "TERMINATED"},
+            "conditionsModule": {"conditions": ["Test Condition"]},
+            "armsInterventionsModule": {},
+            "designModule": {},
+            "sponsorCollaboratorsModule": {},
+        }
+    }
+    entry = to_draft_entry(study)  # must not raise IndexError
+    assert entry["tested_intervention"]["name"] == "Unknown"
+    assert entry["tested_intervention"]["type"] == "Other"
+
+
+def test_to_draft_entry_handles_real_studies_with_no_interventions(real_studies):
+    # Same regression, but against every real fixture record that happens
+    # to have an empty interventions list -- catches the bug even if a
+    # future fixture refresh changes which specific records trigger it.
+    for study in real_studies:
+        arms = study.get("protocolSection", {}).get("armsInterventionsModule", {})
+        if not arms.get("interventions"):
+            entry = to_draft_entry(study)  # must not raise
+            assert entry["tested_intervention"]["type"] == "Other"

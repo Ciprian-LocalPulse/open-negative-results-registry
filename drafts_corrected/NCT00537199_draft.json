@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT00537199",
+  "domain": "Oncology",
+  "target_disease": "Head And Neck Cancer, Oropharynx Cancer",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Visual Examination",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'Study terminated early as per request by sponsor, Zila Biotechnology, Inc.'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2008-12",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00537199",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}

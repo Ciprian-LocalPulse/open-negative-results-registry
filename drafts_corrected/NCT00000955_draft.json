@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT00000955",
+  "domain": "Infectious Disease",
+  "target_disease": "HIV Infections, Tuberculosis",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "Tuberculin Purified Protein Derivative",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: COMPLETED. Status: COMPLETED. Completed trials require manual results-section review before assuming a negative outcome -- see docs/CURATION_GUIDE.md. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Government Institute",
+  "date_concluded": "1992-12",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00000955",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low"
+  ]
+}

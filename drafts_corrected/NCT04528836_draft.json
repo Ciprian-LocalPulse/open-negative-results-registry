@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT04528836",
+  "domain": "Oncology",
+  "target_disease": "Tumor, Solid",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "BBP-398 (Formerly known as IACS-15509)",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'Business decision'. (Downgraded: reason appears administrative, not scientific.) Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2024-07-30",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT04528836",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low"
+  ]
+}

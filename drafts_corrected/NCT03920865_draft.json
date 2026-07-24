@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT03920865",
+  "domain": "Other",
+  "target_disease": "Muscular Atrophy, Spinal",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "Risdiplam",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: COMPLETED. Status: COMPLETED. Completed trials require manual results-section review before assuming a negative outcome -- see docs/CURATION_GUIDE.md. Human curator must confirm whether this represents a genuine negative/null result before merging. NOTE: domain auto-classification was not confident -- verify before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2020-01-02",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT03920865",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low",
+    "domain_unconfirmed"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT01803711",
+  "domain": "Oncology",
+  "target_disease": "Major Depression, Cancer, Diabetes, Cardiovascular Diseases",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "Desvenlafaxine",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'Lack of recruitment and no resources'. (Downgraded: reason appears administrative, not scientific.) Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2016-06",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT01803711",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low",
+    "institution_unconfirmed"
+  ]
+}

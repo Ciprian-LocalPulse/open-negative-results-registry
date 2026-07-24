@@ -1,0 +1,28 @@
+{
+  "experiment_id": "NCT00288795",
+  "domain": "Other",
+  "target_disease": "Fatigue",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Massage Therapy",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: COMPLETED. Status: COMPLETED. Completed trials require manual results-section review before assuming a negative outcome -- see docs/CURATION_GUIDE.md. Human curator must confirm whether this represents a genuine negative/null result before merging. NOTE: domain auto-classification was not confident -- verify before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2011-11",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00288795",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low",
+    "domain_unconfirmed",
+    "institution_unconfirmed"
+  ]
+}

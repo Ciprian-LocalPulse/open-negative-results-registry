@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT00483236",
+  "domain": "Cardiology",
+  "target_disease": "Mitral Valve Insufficiency, Dilated Cardiomyopathy, Congestive Heart Failure",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Unknown",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: WITHDRAWN. Status: WITHDRAWN. Reason given: 'Lack of patient recruitment.'. (Downgraded: reason appears administrative, not scientific.) Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "OBSERVATIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2009-06-01",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00483236",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low",
+    "institution_unconfirmed"
+  ]
+}

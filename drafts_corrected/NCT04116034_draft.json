@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT04116034",
+  "domain": "Cardiology",
+  "target_disease": "Heart Failure, Congestive Heart Failure, Cardiorenal Syndrome, Volume Overload, Sodium Excess, Sodium Disorder",
+  "tested_intervention": {
+    "type": "Device",
+    "name": "alfapump DSR system",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: COMPLETED. Status: COMPLETED. Completed trials require manual results-section review before assuming a negative outcome -- see docs/CURATION_GUIDE.md. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2021-04-15",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT04116034",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_low"
+  ]
+}

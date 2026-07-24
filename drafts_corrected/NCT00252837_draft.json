@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT00252837",
+  "domain": "Endocrinology",
+  "target_disease": "Type 2 Diabetes",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "Tesaglitazar",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'The development program has been terminated'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2006-12",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00252837",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high"
+  ]
+}

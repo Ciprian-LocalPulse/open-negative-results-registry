@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT03454932",
+  "domain": "Immunology",
+  "target_disease": "Rheumatoid Arthritis, Psoriatic Arthritis, Spondylarthritis",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Blood sampling",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'limited number of recruited patients'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "OBSERVATIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2017-06-04",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT03454932",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high"
+  ]
+}

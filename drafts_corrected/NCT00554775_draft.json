@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT00554775",
+  "domain": "Oncology",
+  "target_disease": "Lung Cancer, Metastatic Cancer",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "erlotinib hydrochloride",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'IDMC made a recommendation to stop the trial as the target for continuing to the 2nd phase was not met.'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2010-11",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00554775",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}

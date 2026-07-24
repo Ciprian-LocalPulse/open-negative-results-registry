@@ -90,11 +90,26 @@ def classify_domain(conditions: list) -> tuple:
     value 'Other' rather than an invalid placeholder string when no
     keyword match is found -- the schema's domain field is a strict
     enum (data/templates/submission_schema.json) and a draft that
-    fails validation never even reaches a curator's queue."""
+    fails validation never even reaches a curator's queue.
+
+    Multi-word keywords (e.g. "rheumatoid arthritis") match as long as
+    every word in the phrase appears somewhere in the condition text,
+    regardless of order or adjacency. This is deliberate: ClinicalTrials.gov
+    condition strings frequently use inverted MeSH-style phrasing, e.g.
+    "Arthritis, Rheumatoid" or "Diabetes Mellitus, Type 2" instead of the
+    natural word order -- a plain substring check on "rheumatoid arthritis"
+    silently misses these and dumps real, classifiable data into "Other".
+    """
     text = " ".join(conditions).lower()
+    words_in_text = set(re.findall(r"[a-z]+", text))
     for domain, keywords in DOMAIN_KEYWORDS.items():
-        if any(kw in text for kw in keywords):
-            return domain, True
+        for kw in keywords:
+            kw_words = kw.replace("-", " ").split()
+            if len(kw_words) == 1:
+                if kw in text:
+                    return domain, True
+            elif all(w in words_in_text for w in kw_words):
+                return domain, True
     return "Other", False
 
 
@@ -160,7 +175,7 @@ def to_draft_entry(study: dict) -> dict:
 
     interventions = arms_module.get("interventions", [])
     intervention_name = interventions[0].get("name") if interventions else "Unknown"
-    intervention_type = interventions[0].get("type", "Other").title()
+    intervention_type = interventions[0].get("type", "Other").title() if interventions else "Other"
     if intervention_type not in ("Molecule", "Drug", "Biologic", "Device",
                                   "Behavioral", "Procedure", "Other"):
         intervention_type = "Other"

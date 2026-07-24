@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT04783727",
+  "domain": "Infectious Disease",
+  "target_disease": "Tuberculosis, Pulmonary, Tuberculosis, Multidrug-Resistant, Bacterial Infections, Mycobacterial Infection",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Individualised treatment duration based on RNA transcriptomic model",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'Change in WHO recommendations for standard of care (control arm); availability of new shorter treatment regimens for MDR-TB; war in Ukraine where two study sites are located; key trial team members left the team.'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2022-11-01",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT04783727",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}

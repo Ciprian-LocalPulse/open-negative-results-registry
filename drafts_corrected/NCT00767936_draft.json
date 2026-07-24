@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT00767936",
+  "domain": "Oncology",
+  "target_disease": "Liver Cancer, Hepatitis B, Hepatitis C, Hepatobiliary Cancers Liver, Hepatobiliary Cancers",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Unknown",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "OBSERVATIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2013-09",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00767936",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}

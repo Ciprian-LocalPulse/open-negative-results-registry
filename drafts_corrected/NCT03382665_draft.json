@@ -1,0 +1,26 @@
+{
+  "experiment_id": "NCT03382665",
+  "domain": "Immunology",
+  "target_disease": "Osteoarthritis, Avascular Necrosis, Rheumatoid Arthritis, Functional Deformities, Pseudoarthrosis, Revision of Endoprosthesis-treated Hips, Fracture, Proximal Humeral, Provision of Non-endoprosthetic Previous Operations of the Hip Joint (e.g., Transposition Osteotomies), Femur Fracture, Pseudarthrosis, Trochanteric Fractures, Bridging of Large Bone Defects, Revisions",
+  "tested_intervention": {
+    "type": "Other",
+    "name": "Unknown",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'CE mark will not be renewed, PMCF data no longer required'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "OBSERVATIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Pharmaceutical Company",
+  "date_concluded": "2018-03",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT03382665",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high"
+  ]
+}

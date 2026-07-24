@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT01593137",
+  "domain": "Endocrinology",
+  "target_disease": "Type 2 Diabetes",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "Liraglutide + metformin",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: WITHDRAWN. Status: WITHDRAWN. Reason given: 'Lack of patients with the criteria established in the protocol.'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2014-12",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT01593137",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_id": "NCT00005812",
+  "domain": "Oncology",
+  "target_disease": "Brain Tumors, Central Nervous System Tumors, Leptomeningeal Metastases",
+  "tested_intervention": {
+    "type": "Drug",
+    "name": "temozolomide",
+    "dosage": "See ClinicalTrials.gov record"
+  },
+  "hypothesis": "DRAFT - fill in based on study record.",
+  "outcome": "Trial status: TERMINATED. Status: TERMINATED. Reason given: 'No objective response documented, protocol terminated after 12 patients.'. Human curator must confirm whether this represents a genuine negative/null result before merging.",
+  "methodology_summary": "INTERVENTIONAL",
+  "researcher_orcid": "0000-0000-0000-0000",
+  "institution_type": "Other",
+  "date_concluded": "2004-05",
+  "source_type": "public_database_extraction",
+  "source_url": "https://clinicaltrials.gov/study/NCT00005812",
+  "license": "CC0-1.0",
+  "contact_email_optional": "",
+  "keywords": [
+    "draft",
+    "needs_review",
+    "clinicaltrials_gov",
+    "confidence_high",
+    "institution_unconfirmed"
+  ]
+}
