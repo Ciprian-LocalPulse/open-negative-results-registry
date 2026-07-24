@@ -1,78 +1,175 @@
-name: 🔬 Submit Negative Result / Experimental Failure
-description: Report an experiment, study or protocol that did not confirm the initial hypothesis.
-title: "[NEG-RESULT]: <Short description of the experiment>"
-labels: ["negative-result", "needs-review"]
+name: "🔬 Submit Negative Result / Experimental Failure"
+description: "Report an experiment, study, protocol, or analysis that did not confirm the initial hypothesis."
+title: "[NEG-RESULT]: "
+labels:
+  - negative-result
+  - needs-review
+assignees: []
+
 body:
-type: markdown
-attributes:
-value: |
-## Thank you for contributing to Open Science!
-This form collects essential data to index your negative result according to FAIR standards.
+  - type: markdown
+    attributes:
+      value: |
+        # Open Negative Results Registry (ONRR)
 
-type: input
-id: orcid
-attributes:
-label: ORCID ID (Principal Author)
-description: Standard format, e.g. 0000-0002-1825-0097
-placeholder: 0000-0000-0000-0000
-validations:
-required: true
+        Thank you for contributing to **Open Science**.
 
-type: input
-id: ror
-attributes:
-label: ROR ID (Affiliated Institution)
-description: Find the Institution ID on ror.org
-placeholder: https://ror.org/03yrm5c26
-validations:
-required: true
+        This form collects the minimum metadata required to index a negative result according to **FAIR (Findable, Accessible, Interoperable, Reusable)** principles.
 
-type: input
-id: mesh_terms
-attributes:
-label: Domain / Medical Subject Headings (MeSH)
-description: Keywords describing the domain of the experiment (separated by commas).
-placeholder: "e.g. Machine Learning, Oncology, PCR"
-validations:
-required: true
+        Please provide as much detail as possible. Reports may be reviewed by the community before being indexed.
 
-type: textarea
-id: hypothesis
-attributes:
-label: The Hypothesis
-description: What did you try to prove? What was the theoretical basis?
-placeholder: "We hypothesized that applying algorithm X to dataset Y would increase detection accuracy by 15%..."
-validations:
-required: true
+  - type: input
+    id: orcid
+    attributes:
+      label: ORCID ID (Principal Author)
+      description: Enter your ORCID identifier in the standard format.
+      placeholder: "0000-0002-1825-0097"
+    validations:
+      required: true
 
-type: textarea
-id: methodology
-attributes:
-label: Methodology and Protocol
-description: Describe the experimental steps. Include links to code, protocols (protocols.io), or external data repositories.
-validations:
-required: true
+  - type: input
+    id: ror
+    attributes:
+      label: ROR ID (Affiliated Institution)
+      description: Find your institution identifier at https://ror.org
+      placeholder: "https://ror.org/03yrm5c26"
+    validations:
+      required: true
 
-type: textarea
-id: failure_reason
-attributes:
-label: The Result and Analysis of the Failure (The Negative Result)
-description: Why do you think the hypothesis failed? Was it a data limitation, a theoretical error, or an unexpected phenomenon?
-validations:
-required: true
+  - type: input
+    id: mesh_terms
+    attributes:
+      label: Domain / Medical Subject Headings (MeSH)
+      description: Provide keywords describing the scientific domain (comma-separated).
+      placeholder: "Machine Learning, Oncology, PCR, Drug Discovery"
+    validations:
+      required: true
 
-type: input
-id: data_doi
-attributes:
-label: Dataset DOI (Optional but recommended)
-description: Link to raw data on Zenodo, Figshare, etc.
-validations:
-required: false
+  - type: dropdown
+    id: study_type
+    attributes:
+      label: Study / Experiment Type
+      description: Select the category that best describes this submission.
+      options:
+        - Clinical Trial
+        - Preclinical Study
+        - In Vitro Experiment
+        - In Vivo Experiment
+        - Computational / AI / Machine Learning
+        - Statistical Analysis
+        - Meta-analysis
+        - Systematic Review
+        - Protocol Validation
+        - Other
+    validations:
+      required: true
 
-type: checkboxes
-id: terms
-attributes:
-label: License Agreement
-options:
-- label: I confirm that this report and associated data can be published under the CC-BY 4.0 or CC0 license.
-required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: What did you attempt to demonstrate or validate? Include the theoretical rationale.
+      placeholder: |
+        We hypothesized that applying algorithm X to dataset Y would increase detection accuracy by 15% compared with the baseline model.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodology
+    attributes:
+      label: Methodology and Protocol
+      description: Describe the experimental design, sample characteristics, statistical methods, software, and procedural steps. Include links to code, protocols.io, Zenodo, Figshare, or other repositories when available.
+      placeholder: |
+        - Sample size:
+        - Inclusion/exclusion criteria:
+        - Experimental protocol:
+        - Statistical analysis:
+        - Software / version:
+        - External resources:
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed_results
+    attributes:
+      label: Observed Results
+      description: Summarize the actual outcomes of the experiment, including effect sizes, confidence intervals, p-values, or other relevant metrics when available.
+      placeholder: |
+        Example:
+        - Accuracy decreased from 0.81 to 0.76
+        - No statistically significant difference was observed (p = 0.42)
+        - The primary endpoint was not achieved
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: failure_reason
+    attributes:
+      label: Analysis of the Negative Result
+      description: Explain why the hypothesis may not have been supported. Consider data limitations, methodological constraints, theoretical assumptions, confounding factors, or unexpected biological/technical phenomena.
+      placeholder: |
+        The most plausible explanation is that the training dataset was not representative of the target population, resulting in poor generalization performance.
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: data_doi
+    attributes:
+      label: Dataset DOI (Optional)
+      description: Provide a DOI or persistent identifier for the raw or processed data.
+      placeholder: "10.5281/zenodo.1234567"
+    validations:
+      required: false
+
+  - type: input
+    id: code_repository
+    attributes:
+      label: Code Repository (Optional)
+      description: Link to the source code, notebook, or analysis pipeline.
+      placeholder: "https://github.com/your-repository"
+    validations:
+      required: false
+
+  - type: input
+    id: publication
+    attributes:
+      label: Related Publication / Preprint (Optional)
+      description: Link to a manuscript, preprint, or conference abstract if one exists.
+      placeholder: "https://doi.org/..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: ethics
+    attributes:
+      label: Ethics and Data Compliance
+      options:
+        - label: I confirm that this submission does not contain personal or identifiable patient data.
+          required: true
+        - label: I confirm that all necessary ethical approvals were obtained (if applicable).
+          required: false
+        - label: I understand that this report may be publicly visible and indexed by search engines.
+          required: true
+
+  - type: checkboxes
+    id: license
+    attributes:
+      label: License Agreement
+      options:
+        - label: I agree that this report and any associated metadata may be published under the CC BY 4.0 or CC0 license.
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## What happens next?
+
+        1. The submission is validated against the ONRR metadata schema.
+        2. Community reviewers may request clarification or additional evidence.
+        3. Once accepted, the record can be indexed as a citable negative-result contribution.
+
+        Thank you for helping reduce publication bias and improve the reproducibility of scientific research.

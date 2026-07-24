@@ -1,40 +1,70 @@
 name: Auto-Validate Scientific Metadata
 
 on:
-issues:
-types: [opened, edited]
+  issues:
+    types:
+      - opened
+      - edited
+
+permissions:
+  issues: write
+  contents: read
 
 jobs:
-validate-orcid:
-runs-on: ubuntu-latest
-if: contains(github.event.issue.labels.*.name, 'negative-result')
+  validate-scientific-metadata:
+    name: Validate ORCID Metadata
+    runs-on: ubuntu-latest
 
-steps:
-  - name: Check ORCID Format in Issue Body
-    uses: actions/github-script@v6
-    with:
-      script: |
-        const body = context.payload.issue.body;
-        // Regex pentru formatul standard ORCID: 0000-0000-0000-0000 (poate se termina în X)
-        const orcidRegex = /\b\d{4}-\d{4}-\d{4}-\d{3}[0-9X]\b/i;
-        
-        if (!orcidRegex.test(body)) {
-          // Dacă nu se găsește un ORCID valid, lasă un comentariu
-          await github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: "⚠️ **Validare Automată Eșuată**: Nu am putut detecta un ORCID ID valid în submisia ta. Te rugăm să editezi formularul și să folosești formatul corect (ex: `0000-0002-1825-0097`)."
-          });
-          
-          await github.rest.issues.addLabels({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            labels: ['metadata-error']
-          });
-          
-          core.setFailed('Invalid ORCID Format');
-        } else {
-          console.log('ORCID valid detectat.');
-        }
+    if: contains(github.event.issue.labels.*.name, 'negative-result')
+
+    steps:
+      - name: Validate ORCID format
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+
+            // ORCID format:
+            // 0000-0002-1825-0097
+            // Last character may also be X.
+            const orcidRegex = /\b\d{4}-\d{4}-\d{4}-\d{3}[0-9X]\b/i;
+
+            if (!orcidRegex.test(body)) {
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `
+## ⚠️ Automatic Metadata Validation Failed
+
+Thank you for contributing to the **Open Negative Results Registry (ONRR)**.
+
+Our automated validation system could not detect a valid **ORCID iD** in your submission.
+
+### Expected format
+
+\`0000-0002-1825-0097\`
+
+Please edit your submission and provide a valid ORCID identifier.
+
+Your submission will remain available, but it cannot proceed to scientific review until the required metadata is complete.
+
+Thank you for supporting transparent and reproducible science.
+`
+              });
+
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: ["metadata-error"]
+              });
+
+              core.setFailed("Invalid ORCID format.");
+
+            } else {
+
+              console.log("✓ Valid ORCID detected.");
+
+            }
