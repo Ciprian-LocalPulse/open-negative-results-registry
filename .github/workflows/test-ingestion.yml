@@ -1,0 +1,31 @@
+name: Test Ingestion Pipeline
+
+# Separate from test-suite.yml so these can run on a lighter trigger
+# if needed later, and so a failure here is clearly attributable to
+# the Level-1 ingestion tooling specifically. Mirrors the existing
+# test-suite.yml pattern exactly (see that file) for consistency.
+
+on:
+  pull_request:
+    paths:
+      - "scripts/clinicaltrials_ingest.py"
+      - "scripts/pubmed_negative_language_classifier.py"
+      - "tests/test_clinicaltrials_ingest.py"
+      - "tests/test_pubmed_negative_language_classifier.py"
+      - "data/templates/submission_schema.json"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/clinicaltrials_ingest.py"
+      - "scripts/pubmed_negative_language_classifier.py"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest jsonschema requests
+      - run: pytest tests/test_clinicaltrials_ingest.py tests/test_pubmed_negative_language_classifier.py -v
